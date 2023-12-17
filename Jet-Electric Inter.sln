@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jet-Electric Inter", "Jet-Electric Inter\Jet-Electric Inter.csproj", "{0ADFECF0-3331-4584-B3A8-7E90C384E21C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jet-Electric-DataAccessLayer", "Jet-Electric-DataAccessLayer\Jet-Electric-DataAccessLayer.csproj", "{C5F857CD-5A7D-4584-8DCE-4DD9A8C6935D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0ADFECF0-3331-4584-B3A8-7E90C384E21C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ADFECF0-3331-4584-B3A8-7E90C384E21C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ADFECF0-3331-4584-B3A8-7E90C384E21C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F857CD-5A7D-4584-8DCE-4DD9A8C6935D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F857CD-5A7D-4584-8DCE-4DD9A8C6935D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F857CD-5A7D-4584-8DCE-4DD9A8C6935D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F857CD-5A7D-4584-8DCE-4DD9A8C6935D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

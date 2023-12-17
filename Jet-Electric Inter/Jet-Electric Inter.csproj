@@ -9,4 +9,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Jet-Electric-DataAccessLayer\Jet-Electric-DataAccessLayer.csproj" />
+  </ItemGroup>
+
 </Project>
