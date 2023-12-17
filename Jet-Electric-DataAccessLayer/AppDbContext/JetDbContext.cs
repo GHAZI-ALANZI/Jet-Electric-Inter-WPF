@@ -20,6 +20,21 @@ namespace Jet_Electric_DataAccessLayer.AppDbContext
             optionsBuilder.UseSqlServer(connectionString);
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Inventory)
+                .WithOne(i => i.Product)
+                .HasForeignKey<Inventory>(i => i.ID);
+            modelBuilder.Entity<Panel_ProjectBT>()
+            .HasOne(pp => pp.Panel)
+            .WithMany(p => p.Panel_ProjectBT)
+            .HasForeignKey(pp => pp.PanelID);
+
+        }
+
+
+
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Designation> Designations { get; set; }
         internal virtual DbSet<Product> Products { get; set; }
