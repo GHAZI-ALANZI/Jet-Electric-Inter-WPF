@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net" Version="0.1.0" />
     <PackageReference Include="MahApps.Metro" Version="3.0.0-alpha0476" />
     <PackageReference Include="MaterialDesignColors" Version="3.0.0-ci480" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0-ci480" />
@@ -41,7 +42,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Logic\" />
     <Folder Include="Reports\" />
     <Folder Include="Views\" />
   </ItemGroup>
