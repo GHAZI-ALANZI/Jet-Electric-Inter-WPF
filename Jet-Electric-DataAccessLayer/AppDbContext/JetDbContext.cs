@@ -31,6 +31,26 @@ namespace Jet_Electric_DataAccessLayer.AppDbContext
             .WithMany(p => p.Panel_ProjectBT)
             .HasForeignKey(pp => pp.PanelID);
 
+            // Configure default values for the Name property
+            modelBuilder.Entity<Designation>().HasData(
+                new Designation { ID = 1, Name = "Director" },
+                new Designation { ID = 2, Name = "Manager" },
+                new Designation { ID = 3, Name = "HR-Manager" },
+                new Designation { ID = 4, Name = "Sales-Manager" },
+                new Designation { ID = 5, Name = "Finance Manager" },
+                new Designation { ID = 6, Name = "Receptionistr" },
+                new Designation { ID = 7, Name = "IT-Support-Specialist" }
+            );
+
+            // Configure default values for the Name property
+            modelBuilder.Entity<EmployeeStatus>().HasData(
+                new EmployeeStatus { ID = 1, Name = "worker" },
+                new EmployeeStatus { ID = 2, Name = "Employee" },
+                new EmployeeStatus { ID = 3, Name = "Self-employed" }
+
+            );
+
+
         }
 
 
