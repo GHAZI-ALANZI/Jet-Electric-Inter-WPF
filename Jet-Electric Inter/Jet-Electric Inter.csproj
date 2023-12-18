@@ -37,4 +37,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logic\" />
+    <Folder Include="Reports\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>
