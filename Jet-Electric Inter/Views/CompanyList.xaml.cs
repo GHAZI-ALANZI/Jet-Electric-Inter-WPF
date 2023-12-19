@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Jet_Electric_DataAccessLayer.AppDbContext;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Jet_Electric_Inter.Views
 {
@@ -23,6 +12,57 @@ namespace Jet_Electric_Inter.Views
         public CompanyList()
         {
             InitializeComponent();
+            LoadData();
+            PopupBox.Visibility = Visibility.Visible;
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        void LoadData()
+        {
+            DataGrid.ItemsSource = new JetDbContext().Contacts.ToList();
+        }
+
+        private void PopUp_AddNewCompany(object sender, RoutedEventArgs e)
+        {
+
+
+
+            TextBlock_TitleName.Visibility = Visibility.Collapsed;
+            DataGrid.Visibility = Visibility.Collapsed;
+            PopupBox.Visibility = Visibility.Collapsed;
+
+            CompanyAddNew x = new CompanyAddNew();
+            UserPages.Children.Clear();
+            UserPages.Children.Add(x);
+            PopupBoxWithClose.Visibility = Visibility.Visible;
+        }
+
+        private void PopUp_Close(object sender, RoutedEventArgs e)
+        {
+            UserPages.Children.Clear();
+            PopupBoxWithClose.Visibility = Visibility.Hidden;
+
+            LoadData();
+            TextBlock_TitleName.Visibility = Visibility.Visible;
+            DataGrid.Visibility = Visibility.Visible;
+            PopupBox.Visibility = Visibility.Visible;
+        }
+
+        private void PopUp_EditCompany(object sender, RoutedEventArgs e)
+        {
+            TextBlock_TitleName.Visibility = Visibility.Collapsed;
+            DataGrid.Visibility = Visibility.Collapsed;
+            PopupBox.Visibility = Visibility.Collapsed;
+
+            CompanyEdit x = new CompanyEdit();
+            UserPages.Children.Clear();
+            UserPages.Children.Add(x);
+            PopupBoxWithClose.Visibility = Visibility.Visible;
+        }
+
     }
 }
