@@ -71,6 +71,9 @@ namespace Jet_Electric_Inter.Views
             PopupBoxWithClose.Visibility = Visibility.Visible;
         }
 
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }

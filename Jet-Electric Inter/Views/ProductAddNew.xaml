@@ -9,6 +9,7 @@
                  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                  xmlns:src="http://metro.mahapps.com/winfx/xaml/controls"
                  xmlns:domain="clr-namespace:Jet_Electric_Inter.Logic"
+                 
                  Background="{DynamicResource MaterialDesignPaper}"
                  FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
                  TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -54,11 +55,11 @@
             <Style TargetType="{x:Type Slider}" BasedOn="{StaticResource MaterialDesignSlider}">
                 <Setter Property="Margin" Value="0 8 0 8" />
             </Style>
-           
+            
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
@@ -86,10 +87,10 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold" >Add Products</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold" Foreground="White" FontSize="22" FontFamily="Segoe Print" >Add Products</TextBlock>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0">Name</TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="1" Name="NameTextBox" materialDesign:HintAssist.Hint="Name">
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Name</TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="NameTextBox" materialDesign:HintAssist.Hint="Name" Foreground="White">
                     <TextBox.Text>
                         <Binding Path="Name" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                             <Binding.ValidationRules>
@@ -101,8 +102,8 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">Serial No</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="1" Name="SerialNoTextBox" materialDesign:HintAssist.Hint="Code">
+                <TextBlock Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Serial No</TextBlock>
+                <TextBox Grid.Row="2" Grid.Column="1" Name="SerialNoTextBox" materialDesign:HintAssist.Hint="Code" Foreground="White">
                     <TextBox.Text>
                         <Binding Path="SerialNo" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                             <Binding.ValidationRules>
@@ -114,8 +115,8 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="16,10,8,7">Make</TextBlock>
-                <ComboBox  Grid.Row="3" Grid.Column="1" Name="MakeComboBox" materialDesign:HintAssist.Hint="Select Company" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom">
+                <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="16,10,8,7" Foreground="White">Make</TextBlock>
+                <ComboBox  Grid.Row="3" Grid.Column="1" Name="MakeComboBox" materialDesign:HintAssist.Hint="Select Company" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom" Foreground="Black">
                     <ComboBox.SelectedValue>
                         <Binding Path="MakeID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -126,8 +127,8 @@
                 </ComboBox>
 
 
-                <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Margin="16,15,8,13">Stock Level</TextBlock>
-                <TextBox Grid.Row="4" Grid.Column="1" Name="StockLevelTextBox" materialDesign:HintAssist.Hint="Code">
+                <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Margin="16,15,8,13" Foreground="White">Stock Level</TextBlock>
+                <TextBox Grid.Row="4" Grid.Column="1" Name="StockLevelTextBox" materialDesign:HintAssist.Hint="Code" Foreground="White">
                     <TextBox.Text>
                         <Binding Path="StockLevel" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                             <Binding.ValidationRules>
@@ -139,8 +140,8 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Margin="16,10,8,7">Location</TextBlock>
-                <ComboBox  Grid.Row="5" Grid.Column="1" Name="LocationComboBox" materialDesign:HintAssist.Hint="Select Location" MinWidth="72" Margin="0" VerticalAlignment="Bottom">
+                <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Margin="16,10,8,7" Foreground="White">Location</TextBlock>
+                <ComboBox  Grid.Row="5" Grid.Column="1" Name="LocationComboBox" materialDesign:HintAssist.Hint="Select Location" MinWidth="72" Margin="0" VerticalAlignment="Bottom" Foreground="Black" Background="{x:Null}">
                     <ComboBox.SelectedValue>
                         <Binding Path="LocationID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -150,10 +151,10 @@
                     </ComboBox.SelectedValue>
                 </ComboBox>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0">Product Type</TextBlock>
+                <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Product Type</TextBlock>
                 <StackPanel  Grid.Row="6" Grid.Column="1" Margin="13,20,0,0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left">
-                    <RadioButton Name="P_Panel" Content="Panel" GroupName="txtBoxGroup" Checked="P_Panel_Checked"/>
-                    <RadioButton Name="P_Part" Content="Product" GroupName="txtBoxGroup" Checked="P_Product_Checked"></RadioButton>
+                    <RadioButton Name="P_Panel" Content="Panel" GroupName="txtBoxGroup" Checked="P_Panel_Checked" Foreground="White" Background="{x:Null}"/>
+                    <RadioButton Name="P_Part" Content="Product" GroupName="txtBoxGroup" Checked="P_Product_Checked" Background="{x:Null}" Foreground="White"></RadioButton>
                 </StackPanel>
 
                 <StackPanel  Grid.Row="7" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Stretch" Height="auto" Name="TxtBxStackPanel4"  Visibility="Collapsed">
@@ -223,9 +224,17 @@
             </Grid>
         </ScrollViewer>
         <!-- start + popupbox -->
-        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >                    
-                            <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Add new item to product catalog." Content="Add"/>   
-                            <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear inserted values." Content="Clear"/>
+        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="20"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>                    
+                            <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Add new item to product catalog." Content="Add" Foreground="#DDFEFFFF" Background="#FF27C4E7"/>   
+                            <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear inserted values." Content="Clear" Foreground="#DD040404" Background="#FFDBFB2C"/>
         </TextBlock>
         <!-- End + popupbox -->
     </Grid>

@@ -64,5 +64,6 @@ namespace Jet_Electric_Inter.Views
             PopupBoxWithClose.Visibility = Visibility.Visible;
         }
 
+
     }
 }

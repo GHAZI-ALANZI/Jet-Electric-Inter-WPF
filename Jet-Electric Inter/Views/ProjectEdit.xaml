@@ -58,7 +58,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="#FFFDFCFC">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
@@ -86,10 +86,10 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold" >Edit Project Details</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold" Foreground="White" FontSize="22" FontFamily="Segoe Print" >Edit Project Details</TextBlock>
 
-                <TextBlock FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 13 8 5">Select Project</TextBlock>
-                <ComboBox SelectionChanged="SelectProjectComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectProjectComboBox" materialDesign:HintAssist.Hint="Select Company" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom">
+                <TextBlock FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 13 8 5" Foreground="White">Select Project</TextBlock>
+                <ComboBox SelectionChanged="SelectProjectComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectProjectComboBox" materialDesign:HintAssist.Hint="Select Company" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom" Foreground="Black">
                     <ComboBox.SelectedValue>
                         <Binding Path="ID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -99,8 +99,8 @@
                     </ComboBox.SelectedValue>
                 </ComboBox>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="16 15 10 15">Name</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="NameTextBox" materialDesign:HintAssist.Hint="Insert Company Full Name">
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="16 15 10 15" Foreground="White">Name</TextBlock>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="NameTextBox" materialDesign:HintAssist.Hint="Insert Company Full Name" Foreground="White">
                     <TextBox.Text>
                         <Binding Path="Name" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                             <Binding.ValidationRules>
@@ -112,9 +112,9 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">Delivery Date</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Delivery Date</TextBlock>
                 <DatePicker Grid.Row="3" Grid.Column="1" Height="25" Margin="0 5 0 0" x:Name="DeliveryDateDatePicker" Width="150" HorizontalAlignment="Left"  
-                        materialDesign:HintAssist.Hint="Set Delivery Date">
+                        materialDesign:HintAssist.Hint="Set Delivery Date" Foreground="White">
                     <DatePicker.SelectedDate>
                         <Binding Path="DeliveryDate" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -124,8 +124,8 @@
                     </DatePicker.SelectedDate>
                 </DatePicker>
 
-                <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Margin="16,16,8,6">Status</TextBlock>
-                <ComboBox  Grid.Row="4" Grid.Column="1" Name="OrderStatusComboBox" materialDesign:HintAssist.Hint="Select Status" MinWidth="72" Margin="0 10 0 0" VerticalAlignment="Bottom">
+                <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Margin="16,16,8,6" Foreground="White">Status</TextBlock>
+                <ComboBox  Grid.Row="4" Grid.Column="1" Name="OrderStatusComboBox" materialDesign:HintAssist.Hint="Select Status" MinWidth="72" Margin="0 10 0 0" VerticalAlignment="Bottom" Foreground="Black">
                     <ComboBox.SelectedValue>
                         <Binding Path="OrderStatusID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -137,9 +137,17 @@
             </Grid>
         </ScrollViewer>
         <!-- start + popupbox -->
-        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >                    
-                            <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Update project information." Content="Update"/>   
-                            <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear all inserted values and re-select a projct to edit it." Content="Clear"/>
+        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="20"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>                    
+                            <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Update project information." Content="Update" Foreground="#DDF3F3F3" Background="#FF33C419"/>   
+                            <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear all inserted values and re-select a projct to edit it." Content="Clear" Background="#FFF7E838" Foreground="#DD080606"/>
         </TextBlock>
         <!-- End + popupbox -->
     </Grid>

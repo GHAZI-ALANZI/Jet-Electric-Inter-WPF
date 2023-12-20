@@ -70,7 +70,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
@@ -98,10 +98,10 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold" >Edit Employee Details</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold" FontSize="22" FontFamily="Segoe Print" Foreground="White" >Edit Employee Details</TextBlock>
 
-                <TextBlock FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 13 8 5">Select Employee</TextBlock>
-                <ComboBox SelectionChanged="SelectEmployeeComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectEmployeeComboBox" materialDesign:HintAssist.Hint="Select" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom">
+                <TextBlock FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 13 8 5" Foreground="White">Select Employee</TextBlock>
+                <ComboBox SelectionChanged="SelectEmployeeComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectEmployeeComboBox" materialDesign:HintAssist.Hint="Select" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom" Foreground="Black">
                     <ComboBox.SelectedValue>
                         <Binding Path="ID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -111,7 +111,7 @@
                     </ComboBox.SelectedValue>
                 </ComboBox>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0">First Name</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">First Name</TextBlock>
                 <TextBox Grid.Row="2" Grid.Column="1" x:Name="FirstNameTextBox" materialDesign:HintAssist.Hint="Insert First Name">
                     <TextBox.Text>
                         <Binding Path="FirstName" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
@@ -124,7 +124,7 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">Last Name</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Last Name</TextBlock>
                 <TextBox Grid.Row="3" Grid.Column="1" x:Name="LastNameTextBox" materialDesign:HintAssist.Hint="Insert Last Name">
                     <TextBox.Text>
                         <Binding Path="LastName" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
@@ -137,7 +137,7 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">Phone</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Phone</TextBlock>
                 <TextBox Grid.Row="4" Grid.Column="1" x:Name="PhoneTextBox" materialDesign:HintAssist.Hint="Input Phone No.">
                     <TextBox.Text>
                         <Binding Path="Phone" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
@@ -150,7 +150,7 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="5" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">Passport</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Passport</TextBlock>
                 <TextBox Grid.Row="5" Grid.Column="1" x:Name="PassportTextBox" materialDesign:HintAssist.Hint="Input Passport No.">
                     <TextBox.Text>
                         <Binding Path="Passport" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
@@ -163,7 +163,7 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="6" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">Join Date</TextBlock>
+                <TextBlock Grid.Row="6" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Join Date</TextBlock>
                 <DatePicker Grid.Row="6" Grid.Column="1" Height="25" Margin="0 5 0 0" x:Name="JoinDateDatePicker" Width="150" HorizontalAlignment="Left"  
                         materialDesign:HintAssist.Hint="Select Join Date">
                     <DatePicker.SelectedDate>
@@ -175,7 +175,7 @@
                     </DatePicker.SelectedDate>
                 </DatePicker>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0">Address</TextBlock>
+                <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Address</TextBlock>
                 <TextBox Grid.Row="7" Grid.Column="1" x:Name="AddressTextBox" materialDesign:HintAssist.Hint="Input Address">
                     <TextBox.Text>
                         <Binding Path="Address" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
@@ -187,7 +187,7 @@
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
-                <TextBlock Grid.Row="8" Grid.Column="0"  VerticalAlignment="Center" Margin="16 10 8 8">Designation</TextBlock>
+                <TextBlock Grid.Row="8" Grid.Column="0"  VerticalAlignment="Center" Margin="16 10 8 8" Foreground="White">Designation</TextBlock>
                 <ComboBox  Grid.Row="8" Grid.Column="1" Name="DesignationComboBox" materialDesign:HintAssist.Hint="Select Designation" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom">
                     <ComboBox.SelectedValue>
                         <Binding Path="DesignationID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
@@ -197,7 +197,7 @@
                         </Binding>
                     </ComboBox.SelectedValue>
                 </ComboBox>
-                <TextBlock Grid.Row="9" Grid.Column="0"  VerticalAlignment="Center" Margin="16,16,8,7">Status</TextBlock>
+                <TextBlock Grid.Row="9" Grid.Column="0"  VerticalAlignment="Center" Margin="16,16,8,7" Foreground="White">Status</TextBlock>
                 <ComboBox  Grid.Row="9" Grid.Column="1" Name="EmployeeStatusComboBox" materialDesign:HintAssist.Hint="Select Status" MinWidth="72" Margin="0,0,0,-1" VerticalAlignment="Bottom" Grid.RowSpan="4">
                     <ComboBox.SelectedValue>
                         <Binding Path="EmployeeStatusID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
@@ -210,9 +210,17 @@
             </Grid>
         </ScrollViewer>
         <!-- start + popupbox -->
-        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >                    
-                            <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Update employee information." Content="Update"/>   
-                            <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear all values." Content="Clear"/>
+        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="20"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>                    
+                            <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Update employee information." Content="Update" Background="#FF2DA84D"/>   
+                            <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear all values." Content="Clear" Background="#FFE6FD2A" Foreground="#DD100B0B"/>
         </TextBlock>
         <!-- End + popupbox -->
     </Grid>

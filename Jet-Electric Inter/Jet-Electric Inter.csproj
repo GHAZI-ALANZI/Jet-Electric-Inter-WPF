@@ -17,6 +17,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Views\company.png" />
+    <None Remove="Views\jet-engine-aircraft-cfm-international-leap-ge-aviation-engine-removebg-preview.png" />
+    <None Remove="Views\jet-engine-removebg-preview.png" />
+    <None Remove="Views\jet-engine.png" />
+    <None Remove="Views\project.png" />
+    <None Remove="Views\sell.png" />
+    <None Remove="Views\selling.png" />
+    <None Remove="Views\vecteezy_employee-working-with-laptop-or-man-in-business-suit-using_36895734.png" />
+    <None Remove="Views\vecteezy_job-interview-png-graphic-clipart-design_19994618.png" />
+    <None Remove="Views\vecteezy_manager-and-employee-discussions_16390600.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net" Version="0.1.0" />
     <PackageReference Include="Dragablz" Version="0.0.3.234" />
     <PackageReference Include="MahApps.Metro" Version="3.0.0-alpha0476" />
@@ -32,6 +45,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Jet-Electric-DataAccessLayer\Jet-Electric-DataAccessLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\company.png" />
+    <Resource Include="Views\jet-engine-aircraft-cfm-international-leap-ge-aviation-engine-removebg-preview.png" />
+    <Resource Include="Views\jet-engine-removebg-preview.png" />
+    <Resource Include="Views\jet-engine.png" />
+    <Resource Include="Views\project.png" />
+    <Resource Include="Views\sell.png" />
+    <Resource Include="Views\selling.png" />
+    <Resource Include="Views\vecteezy_employee-working-with-laptop-or-man-in-business-suit-using_36895734.png" />
+    <Resource Include="Views\vecteezy_job-interview-png-graphic-clipart-design_19994618.png" />
+    <Resource Include="Views\vecteezy_manager-and-employee-discussions_16390600.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,4 @@
-﻿
-<UserControl     x:Class="Jet_Electric_Inter.Views.HomeEmployees"
+﻿<UserControl     x:Class="Jet_Electric_Inter.Views.HomeEmployees"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -33,7 +32,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="140" />
@@ -54,8 +53,8 @@
                 <!--<TextBlock Style="{StaticResource MaterialDesignDisplay1TextBlock}" TextWrapping="Wrap"><Run Text="Welcome User_Name!"/></TextBlock>-->
                 <Button Style="{StaticResource MaterialDesignFlatButton}" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Backburger" />
-                        <TextBlock Margin="8 0 0 0"><Run Text="Open Quick Tasks"/></TextBlock>
+                        <materialDesign:PackIcon Kind="Backburger" Foreground="#FFFFE000" />
+                        <TextBlock Margin="8 0 0 0" Foreground="#FFCAEF00"><Run Text="Open Quick Tasks"/></TextBlock>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -72,7 +71,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="1" Orientation="Horizontal">
                     <!-- start  material card -->
-                    <materialDesign:Card Width="520" Margin="4 2 8 16" Height="280">
+                    <materialDesign:Card Width="544" Margin="4 2 8 16" Height="280" Background="{x:Null}">
                         <Grid VerticalAlignment="Stretch" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -86,15 +85,19 @@
                                 <ColumnDefinition Width="200" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="1"  Margin="16 16 16 2" Text="Employees"/>
-                            <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Margin="16 0 16 8" Foreground="{DynamicResource MaterialDesignBodyLight}"
-                                                       VerticalAlignment="Center" Text="Manage all the employees through the below options. "/>
+                            <TextBlock Grid.Column="1"  Margin="16 16 16 2" Text="Employees" Foreground="White" FontSize="36" FontFamily="Segoe Print"/>
+                            <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Margin="26,0,0,0"
+                                                       VerticalAlignment="Center" Text="Manage all the employees through the below options. " FontWeight="Bold">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="#FFDCF300"/>
+                                </TextBlock.Foreground>
+                            </TextBlock>
                             <Border Grid.Column="1" Grid.Row="2" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0 8 0 0">
                                 <Grid Margin="8">
                                     <Button FontSize="15" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left" x:Name="ButtonEmployees" Click="ButtonViewEmployees_Click">
                                         <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Account" />
-                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center"><Run Text="View Employees"/></TextBlock>
+                                            <materialDesign:PackIcon Kind="Account" Foreground="White" />
+                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Foreground="White"><Run Text="View Employees"/></TextBlock>
                                         </StackPanel>
                                     </Button>
                                 </Grid>
@@ -103,8 +106,8 @@
                                 <Grid Margin="8">
                                     <Button FontSize="15" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left" x:Name="ButtonCompanies" Click="ButtonUpdateEmployees_Click">
                                         <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="AccountConvert" />
-                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center"><Run Text="Update Employee Information"/></TextBlock>
+                                            <materialDesign:PackIcon Kind="AccountConvert" Foreground="#FFEBDD3E" />
+                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Foreground="#FFFFFA48"><Run Text="Update Employee Information"/></TextBlock>
                                         </StackPanel>
                                     </Button>
                                 </Grid>
@@ -113,8 +116,8 @@
                                 <Grid Margin="8">
                                     <Button FontSize="15" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left" x:Name="ButtonPurchaseSelling" Click="ButtonAddNewEmployee_Click">
                                         <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="AccountPlus" />
-                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center"><Run Text="Add New"/></TextBlock>
+                                            <materialDesign:PackIcon Kind="AccountPlus" Foreground="#FF59EB93" />
+                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Foreground="#FF58FF84"><Run Text="Add New"/></TextBlock>
                                         </StackPanel>
                                     </Button>
                                 </Grid>
@@ -135,6 +138,7 @@
                 </StackPanel>
             </Grid>
         </ScrollViewer>
+        <Image Height="127" Margin="10,70,350,101" Grid.Row="2" Width="196" Source="/Views/vecteezy_job-interview-png-graphic-clipart-design_19994618.png" Stretch="Uniform" />
         <!-- start + popupbox -->
         <!-- End + popupbox -->
     </Grid>

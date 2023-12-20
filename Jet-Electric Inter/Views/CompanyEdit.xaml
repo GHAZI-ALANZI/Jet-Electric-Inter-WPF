@@ -1,5 +1,4 @@
-﻿
-<UserControl     x:Class="Jet_Electric_Inter.Views.CompanyEdit"
+﻿<UserControl     x:Class="Jet_Electric_Inter.Views.CompanyEdit"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -54,11 +53,11 @@
             <Style TargetType="{x:Type Slider}" BasedOn="{StaticResource MaterialDesignSlider}">
                 <Setter Property="Margin" Value="0 8 0 8" />
             </Style>
-    
+
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="Black">
+    <Grid Width="325">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
@@ -86,7 +85,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold"  Foreground="#DDFFFFFF">Edit Company Details</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold"  Foreground="#DDFFFFFF" FontSize="22" FontFamily="Segoe Print">Edit Company Details</TextBlock>
 
                 <TextBlock FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 13 8 5" Foreground="#DDFFFFFF">Select Company</TextBlock>
                 <ComboBox SelectionChanged="SelectCompanyComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectCompanyComboBox" materialDesign:HintAssist.Hint="Select Company" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom" Foreground="#DDFFFFFF">
@@ -153,7 +152,7 @@
             </Grid>
         </ScrollViewer>
         <!-- start + popupbox -->
-        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >                    
+        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,-6,46" >                    
                             <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Update company information" Content="Update" Background="#FF07B114"/>   
                             <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear all values" Content="Clear" Background="#FFEFFF00" Foreground="#DD000000"/>
         </TextBlock>

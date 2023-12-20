@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using ViewModels;
+using Panel = Jet_Electric_DataAccessLayer.Models.Panel;
 
 namespace Jet_Electric_Inter.Views
 {
@@ -176,7 +177,7 @@ namespace Jet_Electric_Inter.Views
 
             if ((bool)P_Panel.IsChecked)
             {
-                Jet_Electric_DataAccessLayer.Models.Panel panel = new Jet_Electric_DataAccessLayer.Models.Panel()
+                Panel panel = new Panel()
                 {
                     Name = NameTextBox.Text,
                     SerialNo = SerialNoTextBox.Text,
@@ -187,7 +188,7 @@ namespace Jet_Electric_Inter.Views
                     CertificationID = int.Parse(CertComboBox.SelectedValue.ToString())
                 };
 
-                Product incomingNewProduct = new Jet_Electric_DataAccessLayer.Models.Panel();
+                Product incomingNewProduct = new Panel();
                 incomingNewProduct = panel;
                 AddProd(incomingNewProduct);
                 AddProdToLocation(incomingNewProduct,
@@ -197,7 +198,7 @@ namespace Jet_Electric_Inter.Views
 
             if ((bool)P_Part.IsChecked)
             {
-                Part part = new Jet_Electric_DataAccessLayer.Models.Part()
+                Part part = new Part()
                 {
                     Name = NameTextBox.Text,
                     SerialNo = SerialNoTextBox.Text,

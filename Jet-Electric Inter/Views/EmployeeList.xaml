@@ -65,7 +65,7 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Name="UserPages" Margin="20,0,20,0"></Grid>
-        <TextBlock Name="TextBlock_TitleName" Grid.Row="0" Margin="10 20 10 10" FontWeight="DemiBold" >Employee List</TextBlock>
+        <TextBlock Name="TextBlock_TitleName" Grid.Row="0" Margin="10 20 10 10" FontWeight="DemiBold" Foreground="White" FontSize="22" FontFamily="Segoe Print" >Employee List</TextBlock>
 
         <DataGrid Grid.Row="1" Grid.Column="0"    
                   ScrollViewer.CanContentScroll="True" 
@@ -75,10 +75,17 @@
                   Height="Auto" 
                   HorizontalAlignment="Center"
                   Name="DataGrid" Width="{Binding Path=ActualWidth, ElementName=grid}"
-                  AlternatingRowBackground="LightGray"
+                  
                   CanUserAddRows="False"
-                  IsReadOnly="True"
+                  IsReadOnly="True" Foreground="White" Background="{x:Null}"
                   >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <!-- Additional setters as needed -->
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding FirstName}" Header="First Name" Width="Auto"  />
                 <DataGridTextColumn Binding="{Binding LastName}" Header="Last Name" Width="Auto" />

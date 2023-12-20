@@ -146,7 +146,7 @@
                          
                     <Button Click="LoginButton_Click"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100"
-                        ToolTip="Log-in to the system" Content="LOGIN" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Foreground="#DDFFFFFF" FontWeight="Bold">
+                        ToolTip="Log-in to the system" Content="LOGIN" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Foreground="#DD44FF63" FontWeight="Bold">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#FF00BBF3" Offset="0.044"/>
@@ -157,7 +157,7 @@
           
                     <Button Click="ExitButton_Click"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"
-                        ToolTip="Goodbye!" Content="EXIT" BorderThickness="0,0,0,0" BorderBrush="{x:Null}">
+                        ToolTip="Goodbye!" Content="EXIT" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Foreground="#DDE70404">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#FF02A9DC" Offset="0.1"/>

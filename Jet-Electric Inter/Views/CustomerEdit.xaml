@@ -58,7 +58,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="Black">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
@@ -86,10 +86,10 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold"  Foreground="#DDFFFFFF">Edit Customer Details</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold"  Foreground="#DDFFFFFF" FontSize="22" FontFamily="Segoe Print">Edit Customer Details</TextBlock>
 
                 <TextBlock FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 13 8 5" Foreground="#DDFFFFFF">Select Customer</TextBlock>
-                <ComboBox SelectionChanged="SelectCustomereComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectCustomerComboBox" materialDesign:HintAssist.Hint="Select Customer" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom" Foreground="#DDFFFFFF">
+                <ComboBox SelectionChanged="SelectCustomereComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectCustomerComboBox" materialDesign:HintAssist.Hint="Select Customer" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom" Foreground="Black">
                     <ComboBox.SelectedValue>
                         <Binding Path="ID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>

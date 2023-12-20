@@ -10,7 +10,10 @@
             <Color x:Key="Gradient11">#FF2233FF</Color>
             <Color x:Key="Gdf">#FF438F97</Color>
             <Color x:Key="122">#FF04B1FB</Color>
-
+            <LinearGradientBrush x:Key="GridBackground44" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#87097272" Offset="0.206"/>
+                <GradientStop Color="#CA0066FF" Offset="0.851"/>
+            </LinearGradientBrush>
             <LinearGradientBrush x:Key="usercontrol" EndPoint="0.5,2" SpreadMethod="Reflect" StartPoint="0.5,0">
                 <LinearGradientBrush.RelativeTransform>
                     <TransformGroup>
@@ -92,6 +95,8 @@
                 <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
+           
+       
 
         </ResourceDictionary>
     </Application.Resources>

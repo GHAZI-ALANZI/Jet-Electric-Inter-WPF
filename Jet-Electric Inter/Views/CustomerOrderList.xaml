@@ -58,14 +58,14 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="#FFE0BCBC">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Name="UserPages" Margin="20,0,20,0"></Grid>
-        <TextBlock Name="TextBlock_TitleName" Grid.Row="0" Margin="10 20 10 10" FontWeight="DemiBold" >All Customer Orders</TextBlock>
+        <TextBlock Name="TextBlock_TitleName" Grid.Row="0" Margin="10 20 10 10" FontWeight="DemiBold" FontSize="22" FontFamily="Segoe Print" Foreground="White" >All Customer Orders</TextBlock>
 
         <DataGrid Grid.Row="1"
                   Grid.Column="0"   
@@ -77,10 +77,17 @@
                   HorizontalAlignment="Center"
                   Name="DataGrid"
                   Width="{Binding Path=ActualWidth, ElementName=grid}"
-                  AlternatingRowBackground="LightGray"
+               
                   CanUserAddRows="False"
-                  IsReadOnly="True"
+                  IsReadOnly="True" Background="{x:Null}" Foreground="#E5FFFFFF"
                   >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <!-- Additional setters as needed -->
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding CustomerOrder.ID }" Header="Order No." Width="Auto"  />
                 <DataGridTextColumn Binding="{Binding CustomerOrder.OrderDate, StringFormat=d, ConverterCulture=en-NZ }" Header="Order Date" Width="Auto"  />

@@ -58,14 +58,14 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="#FFC09999">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Name="UserPages" Margin="20,0,20,0"></Grid>
-        <TextBlock Name="TextBlock_TitleName" Grid.Row="0" Margin="10 20 10 10" FontWeight="DemiBold" >Product Stock List</TextBlock>
+        <TextBlock Name="TextBlock_TitleName" Grid.Row="0" Margin="10 20 10 10" FontWeight="DemiBold" FontSize="22" FontFamily="Segoe Print" Foreground="White" >Product Stock List</TextBlock>
 
         <DataGrid Grid.Row="1" 
                   Grid.Column="0"  
@@ -76,9 +76,15 @@
                   Height="Auto" HorizontalAlignment="Center"
                   Name="DataGrid" 
                   Width="{Binding Path=ActualWidth, ElementName=grid}"
-                  AlternatingRowBackground="LightGray"
+                
                   CanUserAddRows="False"
-                  IsReadOnly="True">
+                  IsReadOnly="True" Background="{x:Null}" Foreground="#E5FFFFFF">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Product.Name}" Header="Name" Width="Auto" />
                 <DataGridTextColumn Binding="{Binding Product.Make.Name}" Header="Make" Width="Auto"  />

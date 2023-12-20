@@ -1,5 +1,4 @@
-﻿
-<src:MetroWindow x:Class="Jet_Electric_Inter.Views.MainWindow"
+﻿<src:MetroWindow x:Class="Jet_Electric_Inter.Views.MainWindow"
                  Title="Jet-Electric Inter"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,9 +8,6 @@
                  xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"         
                  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                  xmlns:src="http://metro.mahapps.com/winfx/xaml/controls"
-                
-                 
-                 Background="{DynamicResource MaterialDesignPaper}"
                  FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
                  TextElement.Foreground="{DynamicResource MaterialDesignBody}"
                  TextElement.FontWeight="Regular"
@@ -23,8 +19,14 @@
                  Height="700"
                  Width="900"     
                  Loaded="Window_Loaded"
-                 WindowStartupLocation="CenterScreen"
+                 WindowStartupLocation="CenterScreen" WindowStyle="None"
                  >
+    <src:MetroWindow.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FFAD2A2A" Offset="1"/>
+        </LinearGradientBrush>
+    </src:MetroWindow.Background>
     <UserControl>
         <UserControl.Resources>
             <ResourceDictionary>
@@ -171,7 +173,13 @@
                     </DockPanel>
                 </materialDesign:DrawerHost.LeftDrawerContent>
                 <DockPanel>
-                    <materialDesign:ColorZone Padding="16"  Mode="PrimaryMid" DockPanel.Dock="Top" Background="Black">
+                    <materialDesign:ColorZone Padding="16"  Mode="PrimaryMid" DockPanel.Dock="Top">
+                        <materialDesign:ColorZone.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF047883" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:ColorZone.Background>
                         <DockPanel>
                             <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False" x:Name="MenuToggleButton"/>
                             <materialDesign:PopupBox PopupMode="Click" DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
@@ -184,10 +192,16 @@
                                 </StackPanel>
                                 <!-- end navigation links -->
                             </materialDesign:PopupBox>
-                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"><Run Text="Jet-Electric Inter"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontFamily="Segoe Print"><Run Text="Jet-Electric Inter"/></TextBlock>
                         </DockPanel>
                     </materialDesign:ColorZone>
-                    <Grid Background="Black">
+                    <Grid>
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#8A0B577C" Offset="0.145"/>
+                                <GradientStop Color="#A78EFAFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
@@ -195,35 +209,35 @@
                         <!-- start information links -->
                         <StackPanel Grid.Row="0" Margin="16 5 16 5" Orientation="Horizontal">
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_Employees">
+                                <Button Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_Employees" Background="{x:Null}" Foreground="White" FontWeight="Bold">
                                     <StackPanel Orientation="Horizontal">
                                         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" />
                                         <TextBlock MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_1"><Run TextBlock.FontWeight="Regular" TextBlock.FontSize="14" Text="  Employees"/></TextBlock>
                                     </StackPanel>
                                 </Button>
 
-                                <Button Margin="10 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_Products">
+                                <Button Margin="10 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_Products" Foreground="White">
                                     <StackPanel Orientation="Horizontal">
                                         <materialDesign:PackIcon Kind="Archive" VerticalAlignment="Center" />
                                         <TextBlock MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_2"><Run TextBlock.FontWeight="Regular" TextBlock.FontSize="14" Text="  Products"/></TextBlock>
                                     </StackPanel>
                                 </Button>
 
-                                <Button Margin="10 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_Companies">
+                                <Button Margin="10 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_Companies" Background="{x:Null}" Foreground="White">
                                     <StackPanel Orientation="Horizontal">
                                         <materialDesign:PackIcon Kind="Briefcase" VerticalAlignment="Center" />
                                         <TextBlock MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_3"><Run TextBlock.FontWeight="Regular" TextBlock.FontSize="14" Text="  Companies"/></TextBlock>
                                     </StackPanel>
                                 </Button>
 
-                                <Button Margin="10 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_Projects">
+                                <Button Margin="10 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_Projects" Foreground="White">
                                     <StackPanel Orientation="Horizontal">
                                         <materialDesign:PackIcon  VerticalAlignment="Center" />
                                         <TextBlock MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_4"><Run TextBlock.FontWeight="Regular" TextBlock.FontSize="14" Text="  Projects"/></TextBlock>
                                     </StackPanel>
                                 </Button>
 
-                                <Button Margin="10 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_PurchaseSelling">
+                                <Button Margin="10 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" x:Name="btn_PurchaseSelling" Foreground="White">
                                     <StackPanel Orientation="Horizontal">
                                         <materialDesign:PackIcon Kind="BasketUnfill" VerticalAlignment="Center" />
                                         <TextBlock MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_5"><Run TextBlock.FontWeight="Regular" TextBlock.FontSize="14" Text="  Purchase &amp; Selling"/></TextBlock>
@@ -240,6 +254,7 @@
 
                         <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar"
                                              Grid.Row="1" />
+                        <Image HorizontalAlignment="Left" Height="75" Margin="271,-68,0,0" VerticalAlignment="Top" Width="75" Source="/Views/jet-engine-removebg-preview.png"/>
                     </Grid>
                 </DockPanel>
             </materialDesign:DrawerHost>

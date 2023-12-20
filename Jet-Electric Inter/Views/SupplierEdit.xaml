@@ -58,7 +58,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
@@ -86,10 +86,10 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold" >Edit Supplier Details</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="DemiBold" FontSize="22" FontFamily="Segoe Print" Foreground="White" >Edit Supplier Details</TextBlock>
 
-                <TextBlock FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 13 8 5">Select Supplier</TextBlock>
-                <ComboBox SelectionChanged="SelectSupplierComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectSupplierComboBox" materialDesign:HintAssist.Hint="Select Supplier" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom">
+                <TextBlock FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 13 8 5" Foreground="White">Select Supplier</TextBlock>
+                <ComboBox SelectionChanged="SelectSupplierComboBox_SelectionChanged"  Grid.Row="1" Grid.Column="1" Name="SelectSupplierComboBox" materialDesign:HintAssist.Hint="Select Supplier" MinWidth="72" Margin="0 0 0 0" VerticalAlignment="Bottom" Foreground="Black">
                     <ComboBox.SelectedValue>
                         <Binding Path="ID" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -99,8 +99,8 @@
                     </ComboBox.SelectedValue>
                 </ComboBox>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0">Name</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="NameTextBox" materialDesign:HintAssist.Hint="Insert Company Full Name">
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Name</TextBlock>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="NameTextBox" materialDesign:HintAssist.Hint="Insert Company Full Name" Foreground="White">
                     <TextBox.Text>
                         <Binding Path="CompanyName" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                             <Binding.ValidationRules>
@@ -112,8 +112,8 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">Phone No.</TextBlock>
-                <TextBox Grid.Row="3" Grid.Column="1" x:Name="PhoneTextBox" materialDesign:HintAssist.Hint="+00-00-0000000">
+                <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Phone No.</TextBlock>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="PhoneTextBox" materialDesign:HintAssist.Hint="+00-00-0000000" Foreground="White">
                     <TextBox.Text>
                         <Binding Path="Phone" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                             <Binding.ValidationRules>
@@ -125,8 +125,8 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">E-Mail</TextBlock>
-                <TextBox Grid.Row="4" Grid.Column="1" x:Name="EmailTextBox" materialDesign:HintAssist.Hint="Input Email">
+                <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">E-Mail</TextBlock>
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="EmailTextBox" materialDesign:HintAssist.Hint="Input Email" Foreground="White">
                     <TextBox.Text>
                         <Binding Path="Email" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                             <Binding.ValidationRules>
@@ -138,8 +138,8 @@
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock Grid.Row="5" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0">Address</TextBlock>
-                <TextBox Grid.Row="5" Grid.Column="1" x:Name="AddressTextBox" materialDesign:HintAssist.Hint="Input Address">
+                <TextBlock Grid.Row="5" Grid.Column="0"  VerticalAlignment="Center" Margin="16 0 8 0" Foreground="White">Address</TextBlock>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="AddressTextBox" materialDesign:HintAssist.Hint="Input Address" Foreground="White">
                     <TextBox.Text>
                         <Binding Path="Address" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                             <Binding.ValidationRules>
@@ -153,9 +153,17 @@
             </Grid>
         </ScrollViewer>
         <!-- start + popupbox -->
-        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >                    
-                            <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Update supplier information" Content="Update"/>   
-                            <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear inserted values, select a supplier again." Content="Clear"/>
+        <TextBlock Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" RenderTransformOrigin="0.5,0.5" Height="36" Margin="0,0,0,50" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="20"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>                    
+                            <Button Click="InsertButton_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="10 0 40 0" Width="100" ToolTip="Update supplier information" Content="Update" Foreground="#DDFFFFFF" Background="#FF1BBC97"/>   
+                            <Button Click="ClearButton_Click"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 40 0" Width="100"  ToolTip="Clear inserted values, select a supplier again." Content="Clear" Background="#FFF1FD41" Foreground="#DD000000"/>
         </TextBlock>
         <!-- End + popupbox -->
     </Grid>
