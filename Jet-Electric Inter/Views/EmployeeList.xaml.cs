@@ -1,7 +1,10 @@
-﻿using Jet_Electric_DataAccessLayer.Factories;
+﻿using Jet_Electric_DataAccessLayer.AppDbContext;
+using Jet_Electric_DataAccessLayer.Factories;
 using Jet_Electric_DataAccessLayer.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Windows;
 using System.Windows.Controls;
+using static MaterialDesignThemes.Wpf.Theme;
 
 namespace Jet_Electric_Inter.Views
 {
@@ -25,6 +28,17 @@ namespace Jet_Electric_Inter.Views
         {
             List<Employee> emplist = new EmployeeFactory().SelectAll();
             DataGrid.ItemsSource = emplist;
+
+            using (var dbContext = new JetDbContext())
+            {
+                // Retrieve Designation AND EmployeeStatus EMPLOYEE table
+                List<Employee> people = dbContext.Employees
+                    .Include(p => p.Designation)
+                    .Include(p => p.EmployeeStatus)
+                    .ToList();
+
+                DataGrid.ItemsSource = people;
+            }
         }
 
         private void PopUp_AddNewEmployee(object sender, RoutedEventArgs e)

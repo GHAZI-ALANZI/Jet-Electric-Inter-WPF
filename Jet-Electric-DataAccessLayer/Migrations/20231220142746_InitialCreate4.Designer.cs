@@ -4,6 +4,7 @@ using Jet_Electric_DataAccessLayer.AppDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jet_Electric_DataAccessLayer.Migrations
 {
     [DbContext(typeof(JetDbContext))]
-    partial class JetDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240510142746_InitialCreate4")]
+    partial class InitialCreate4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

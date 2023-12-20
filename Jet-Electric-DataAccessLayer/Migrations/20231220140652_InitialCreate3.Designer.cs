@@ -4,6 +4,7 @@ using Jet_Electric_DataAccessLayer.AppDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jet_Electric_DataAccessLayer.Migrations
 {
     [DbContext(typeof(JetDbContext))]
-    partial class JetDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240510140652_InitialCreate3")]
+    partial class InitialCreate3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,26 +44,6 @@ namespace Jet_Electric_DataAccessLayer.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Certifications");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Description = "ISO",
-                            Name = "ISO90001"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            Description = "MSO",
-                            Name = "MSO800"
-                        },
-                        new
-                        {
-                            ID = 3,
-                            Description = "ICD",
-                            Name = "ICD785"
-                        });
                 });
 
             modelBuilder.Entity("Jet_Electric_DataAccessLayer.Models.Contact", b =>
@@ -352,23 +335,6 @@ namespace Jet_Electric_DataAccessLayer.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Makes");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Name = "FDGH"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            Name = "HWQ "
-                        },
-                        new
-                        {
-                            ID = 3,
-                            Name = "MSSD"
-                        });
                 });
 
             modelBuilder.Entity("Jet_Electric_DataAccessLayer.Models.OrderStatus", b =>
@@ -614,23 +580,6 @@ namespace Jet_Electric_DataAccessLayer.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("SizeTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Description = "KM"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            Description = "M"
-                        },
-                        new
-                        {
-                            ID = 3,
-                            Description = "IC"
-                        });
                 });
 
             modelBuilder.Entity("Jet_Electric_DataAccessLayer.Models.Type", b =>
@@ -648,23 +597,6 @@ namespace Jet_Electric_DataAccessLayer.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Types");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Description = "ST2100"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            Description = "SK3000 "
-                        },
-                        new
-                        {
-                            ID = 3,
-                            Description = "SU1400"
-                        });
                 });
 
             modelBuilder.Entity("Jet_Electric_DataAccessLayer.Models.Panel", b =>

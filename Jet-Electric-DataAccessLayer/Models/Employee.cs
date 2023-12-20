@@ -7,6 +7,11 @@
         {
             this.PurchaseOrders = new HashSet<PurchaseOrder>();
             this.CustomerOrders = new HashSet<CustomerOrder>();
+
+
+
+
+
         }
 
         public int ID { get; set; }

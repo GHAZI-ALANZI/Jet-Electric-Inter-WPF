@@ -31,7 +31,7 @@ namespace Jet_Electric_DataAccessLayer.AppDbContext
             .WithMany(p => p.Panel_ProjectBT)
             .HasForeignKey(pp => pp.PanelID);
 
-            // Configure default values for the Name property
+            // Configure default values for the Designation
             modelBuilder.Entity<Designation>().HasData(
                 new Designation { ID = 1, Name = "Director" },
                 new Designation { ID = 2, Name = "Manager" },
@@ -42,13 +42,54 @@ namespace Jet_Electric_DataAccessLayer.AppDbContext
                 new Designation { ID = 7, Name = "IT-Support-Specialist" }
             );
 
-            // Configure default values for the Name property
+            // Configure default values for the EmployeeStatus
             modelBuilder.Entity<EmployeeStatus>().HasData(
                 new EmployeeStatus { ID = 1, Name = "worker" },
                 new EmployeeStatus { ID = 2, Name = "Employee" },
                 new EmployeeStatus { ID = 3, Name = "Self-employed" }
 
             );
+
+            // Configure default values for the Location
+            modelBuilder.Entity<Location>().HasData(
+                new Location { ID = 1, Name = "Vienna" },
+                new Location { ID = 2, Name = "Berlin " },
+                new Location { ID = 3, Name = "Roma" }
+
+            );
+
+            // Configure default values for Type
+            modelBuilder.Entity<Models.Type>().HasData(
+                new Models.Type { ID = 1, Description = "ST2100" },
+                new Models.Type { ID = 2, Description = "SK3000 " },
+                new Models.Type { ID = 3, Description = "SU1400" }
+
+            );
+
+            // Configure default values for SizeType
+            modelBuilder.Entity<SizeType>().HasData(
+                new SizeType { ID = 1, Description = "KM" },
+                new SizeType { ID = 2, Description = "M" },
+                new SizeType { ID = 3, Description = "IC" }
+
+            );
+
+            // Configure default values for Certification
+            modelBuilder.Entity<Certification>().HasData(
+                new Certification { ID = 1, Description = "ISO", Name = "ISO90001" },
+                new Certification { ID = 2, Description = "MSO", Name = "MSO800" },
+                new Certification { ID = 3, Description = "ICD", Name = "ICD785" }
+
+            );
+
+            // Configure default values for the Make
+            modelBuilder.Entity<Make>().HasData(
+                new Make { ID = 1, Name = "FDGH" },
+                new Make { ID = 2, Name = "HWQ " },
+                new Make { ID = 3, Name = "MSSD" }
+
+            );
+
 
 
         }
